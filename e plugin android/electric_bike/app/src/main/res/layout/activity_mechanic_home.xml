@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/mechanic"
+    tools:context=".mechanic_home">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Mechanic World"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="250dp"
+        android:textColorHint="@color/white"
+        android:layout_height="50dp"
+        android:backgroundTint="#00008B"
+        android:hint="Edit Profile"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="135dp" />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="250dp"
+        android:backgroundTint="#00008B"
+        android:textColorHint="@color/white"
+        android:layout_height="50dp"
+        android:hint="Request"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="135dp" />
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="250dp"
+        android:backgroundTint="#00008B"
+        android:textColorHint="@color/white"
+        android:layout_height="50dp"
+        android:hint="Send Complaint"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="135dp" />
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="250dp"
+        android:backgroundTint="#00008B"
+        android:textColorHint="@color/white"
+        android:layout_height="50dp"
+        android:hint="Logout"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="135dp" />
+</LinearLayout>

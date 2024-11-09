@@ -1,0 +1,91 @@
+{% include 'center_header.html' %}
+
+<center>
+	<div class="allcontain">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<img src="/static/image/lo.jpg" alt="oldcar" >
+				<div class="carousel-caption">
+
+
+
+{%if data['send']==0%}  
+
+<form method="post">
+    <h1 style="margin-left: 200px;">Send Service Charge</h1>
+    <table class="table" style="width: 500px;margin-left: 300px;color: white;">
+        <tr>
+            <th>Enter The Amount</th>
+            <td><input type="text" name="reply" class="form-control" required=""></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="sub_send" value="Send" class="btn btn-danger"></td>
+        </tr>
+    </table>
+</form>
+{%elif  data['pay']%}
+<h1 style="margin-left: 200px;">PAYMENT</h1>
+	<table class="table" style="width: 200px;margin-left: 300px">
+		<tr>
+			<th>Amount</th>
+			<th>Date</th>
+		</tr>
+		{% for row in data['pay'] %}
+		<tr>
+			<td>{{ row['amount'] }}</td>
+			<td>{{ row['date'] }}</td>
+			
+		</tr>
+		{% endfor %}
+	</table>
+{%else%}               
+					<h1 style="margin-left: 200px;">Requests</h1>
+	<table class="table" style="width: 900px;margin-left: 200px">
+		
+		<tr>
+			<th>User Name</th>
+            <th>Latitude</th>
+			<th>Longitude</th>
+			<th>Date</th>
+			<th>Place</th>
+			<th>Phone Number</th>
+			<th>Amount</th>
+			<th>Accept</th>
+            <th>Reject</th>
+			<th>Send Service charge</th>
+            <th>View Payment</th>
+		</tr>
+		{% for row in data['req'] %}
+		<tr>
+			<td>{{ row['firstname'] }} {{ row['lastname'] }}</td>
+            <td>{{ row['latitude'] }}</td> 
+			<td>{{ row['longitude'] }}</td> 
+			<td>{{ row['date'] }}</td> 
+			<td>{{ row['place'] }}</td>
+			<td>{{ row['phone'] }}</td>
+			<td>{{ row['servicceamount'] }}</td>
+			{%if row['status']=='pending'%}
+			<td><a href="?action=accept&ser_request_id={{row['ser_request_id']}}" class="btn btn-info">Accept</a></td>
+			<td><a href="?action=reject&ser_request_id={{row['ser_request_id']}}" class="btn btn-info">Reject</a></td>
+            {%else%}
+            <td></td>
+            <td></td>
+            {%endif%}
+			<td><a href="?action=send&ser_request_id={{row['ser_request_id']}}" class="btn btn-info">Send</a></td>
+			<td><a href="?action=view&ser_request_id={{row['ser_request_id']}}" class="btn btn-info">View</a></td>
+			
+
+
+		</tr>
+		{% endfor %}
+	</table>
+    {% endif %}
+</center>
+</div>
+			</div>
+			
+		</div>
+		</div>
+</div>
+{% include 'footer.html' %}

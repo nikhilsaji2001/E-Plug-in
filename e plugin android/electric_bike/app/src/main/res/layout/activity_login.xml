@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/img1"
+    tools:context=".login">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:hint="Login"
+        android:textColorHint="@color/white"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:textSize="30dp"
+
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/white"
+
+        android:hint="Username"
+        android:gravity="center"
+
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
+
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Password"
+
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="Login"
+        android:backgroundTint="#00008B"
+        android:textColorHint="@color/white"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+
+
+
+    <Button
+        android:id="@+id/tv3"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="User Signup"
+        android:textColorHint="@color/white"
+        android:backgroundTint="#00008B"
+
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/tvww"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="Mechanic Signup"
+        android:textColorHint="@color/white"
+        android:backgroundTint="#00008B"
+
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

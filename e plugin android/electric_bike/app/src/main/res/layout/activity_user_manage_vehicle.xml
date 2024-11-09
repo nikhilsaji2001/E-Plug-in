@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/userhome"
+    tools:context=".user_manage_vehicle">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Vehicle"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonNameghjkhj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+        android:text="Select Vehicle type"/>
+
+    <Spinner
+        android:id="@+id/spinnersss"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonuyy"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textColorHint="@color/white"
+        android:backgroundTint="#00008B"
+        android:layout_height="wrap_content"
+        android:text="Add" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:divider="#0C275E"
+        android:dividerHeight="3.5dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:id="@+id/lvhjgfrtr"/>
+
+</LinearLayout>

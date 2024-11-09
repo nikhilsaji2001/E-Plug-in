@@ -1,0 +1,33 @@
+{% include 'bunk_header.html' %}
+
+<center>
+	<div class="allcontain">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<img src="/static/image/lo.jpg" alt="oldcar" >
+				<div class="carousel-caption">
+	
+	<table class="table" style="width: 500px;margin-left: 300px">
+		<h1 style="margin-left: 200px;">Complaints</h1>
+		<tr>
+			<th>Sl.No</th>
+			<th>Complaint</th>
+			<th>Date</th>
+		</tr>
+		{% for row in data['req'] %}
+		<tr>
+			<td>{{ loop.index }}</td>
+			<td>{{ row['complaint'] }}</td>
+			<td>{{ row['date'] }}</td>
+		</tr>
+		{% endfor %}	
+	</table>
+</center>
+</div>
+			</div>
+			
+		</div>
+		</div>
+</div>
+{% include 'footer.html' %}

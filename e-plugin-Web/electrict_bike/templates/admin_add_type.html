@@ -1,0 +1,54 @@
+{% include 'admin_header.html' %}
+
+<center>
+	<div class="allcontain">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<img src="/static/image/lo.jpg" alt="oldcar" >
+				<div class="carousel-caption">
+	<form method="post">
+		<h1 style="color: azure">Add Type</h1>
+		<table class="table" style="width: 500px;margin-left: 300px;color: white;">
+			<tr>
+				<th>Add Type</th>
+				<td><input type="text" name="reply" class="form-control" required=""></td>
+			</tr>
+          
+				<th>Add Voltage</th>
+				<td><input type="text" name="voltage" class="form-control" required=""></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="Add" class="btn btn-danger"></td>
+			</tr>
+		</table>
+
+
+
+        <table class="table" style="width: 500px;margin-left: 300px">
+            <h1 style="margin-left: 200px;">Types</h1>
+            <tr>
+                <th>Type Name</th>
+                <th>Voltage</th>
+                <th>Update</th>
+                <th>Delete</th>
+                
+            </tr>
+            {% for row in data['comp'] %}
+            <tr>
+                <td>{{ row['type_name'] }}</td>
+                <td>{{ row['voltage'] }}</td>
+                <td><a href="admin_update_type?type_id={{ row['type_id'] }}" class="btn btn-info">Update</a></td>
+                <td><a href="admin_delete_type?type_id={{ row['type_id'] }}" class="btn btn-info">Delete</a></td>
+            </tr>
+            {% endfor %}	
+        </table>
+	</form>
+</center>
+</div>
+			</div>
+			
+		</div>
+		</div>
+</div>
+{% include 'footer.html' %}

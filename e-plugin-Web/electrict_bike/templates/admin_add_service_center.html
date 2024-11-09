@@ -1,0 +1,203 @@
+{% include 'admin_header.html' %}
+ <center> 
+
+	<div class="allcontainrequired	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<img src="/static/image/lo.jpg" alt="oldcar" >
+				<div class="carousel-caption">
+
+				{%if data['mech']%}
+
+				<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+        <script type="text/javascript">
+            // window.onload = function () {
+            function myFunction() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(9.9763482, 76.286272),
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var infoWindow = new google.maps.InfoWindow();
+                var latlngbounds = new google.maps.LatLngBounds();
+                var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+                google.maps.event.addListener(map, 'click', function (e) {
+                    alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+                    document.getElementById('slati').value = e.latLng.lat();
+                    document.getElementById('elongi').value = e.latLng.lng();
+
+
+                });
+            }
+        </script>
+				
+<form method="post" style="margin-top: -15em!important">
+	
+	<!-- 
+	<table style="width: 1000px;margin-top: -100px;color: black;" >
+			<tr>
+				<td>
+					 -->
+
+
+
+			<h2  > Update Service Center</h2><br>
+	<table class="table" style="width: 500px">
+			<tr>
+			<td >Name</td>
+			<td style="color: black;"><input type="text" name="firstname" value="{{data['mech'][0]['firstname']}}" required></td>
+		</tr>
+		
+		<tr>
+			<td >Place</td>
+			<td style="color: black;"><input type="text" name="place" value="{{data['mech'][0]['place']}}"  required></td>	
+		</tr>
+		<tr>
+			<td >Phone</td>
+			<td style="color: black;"><input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" title="Phone number with 6-9 and remaing 9 digit with 0-9" value="{{data['mech'][0]['phone']}}" required></td>	
+		</tr>
+		<tr>
+			<td >Email</td>
+			<td style="color: black;"><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Enter Valid Email" name="email" value="{{data['mech'][0]['email']}}" required></td>	
+		</tr>
+
+		<tr>
+			<td >Latitude</td>
+			<td style="color: black;"><input type="text" name="latitude" id="slati" value="{{data['mech'][0]['latitude']}}"></td>	
+			
+			<td><a onclick="myFunction();"  class="btn btn-success" required>View Map</a></td>
+		</tr>
+		<tr>
+			<td >Longitude</td>
+			<td style="color: black;"><input type="text" name="longitude" id="elongi" value="{{data['mech'][0]['longitude']}}" required></td>	
+		</tr>
+		
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="sub_upd" value="Update" class="btn btn-primary"></td>
+		</tr>
+		
+		</table>
+		</td>
+		<td>
+			<div id="dvMap" style="width: 600px; height: 400px"></div>
+		</td>
+			</tr>
+		</table>
+	</form>
+
+
+{%else%}
+      
+	<form method="post">
+		<table style="width: 1000px;margin-top: -100px;color: black;" >
+			<tr>
+				<td>
+					<h2 style="color: azure" > Add Service Center</h2><br>
+			
+	<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>Name</th>
+			<td><input type="text" name="firstname" class="form-control" required></td>
+		</tr>
+		<!-- <tr>
+			<td>LastName</td>
+			<td><input type="text" name="lastname"class="form-control" required></td>
+		</tr>required -->
+		<tr>
+			<td>Place</td>
+			<td><input type="text" name="place"class="form-control"required></td>	
+		</tr>
+		<tr>
+			<td>Phone</td>
+			<td><input type="text" name="phone"class="form-control"required></td>	
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="text" name="email"class="form-control"required></td>	
+		</tr>
+
+		<tr>
+			<td>Latitude</td>
+			<td><input type="text" name="latitude" id="slati"class="form-control"></td>	
+			<td><a onclick="myFunction();" class="btn btn-danger"required>View Map</a></td>
+		</tr>
+		<tr>
+			<td>Longitude</td>
+			<td><input type="text" name="longitude" id="elongi"class="form-control"required></td>	
+		</tr>
+		
+		<tr>
+			<td align="center"><input type="submit" name="submit" value="Register" class="btn btn-success"></td>
+		 	<td align="center"><input type="reset" name="reset" value="Reset" class="btn btn-danger"></td>
+		 </tr>
+	</table>
+		</td>
+		<td>
+			<div id="dvMap" style="width: 600px; height: 400px"></div>
+		</td>
+			</tr>
+		</table>
+			
+			</form>
+				
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+        <script type="text/javascript">
+            // window.onload = function () {
+            function myFunction() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(9.9763482, 76.286272),
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var infoWindow = new google.maps.InfoWindow();
+                var latlngbounds = new google.maps.LatLngBounds();
+                var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+                google.maps.event.addListener(map, 'click', function (e) {
+                    alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+                    document.getElementById('slati').value = e.latLng.lat();
+                    document.getElementById('elongi').value = e.latLng.lng();
+
+
+                });
+            }
+        </script>
+
+	<div class="carousel-caption">
+</center>
+</div>
+			</div>
+			
+		</div>
+		</div>
+	</div>
+
+	{%endif%}
+			
+	<table class="table" style="width: 800px;margin-left: 100px;padding-top: 100PX;">
+					<h1 style=" ">Service Center</h1>
+
+		<tr>
+			<th>Name</th>
+			<th>Place</th>
+			<th>Phone Number</th>
+			<th>Email</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+		</tr>
+		{% for row in data['sc'] %}
+		<tr>
+			<td>{{ row['firstname'] }}</td>
+			<td>{{ row['place'] }}</td>
+			<td>{{ row['phone'] }}</td>
+			<td>{{ row['email'] }}</td>
+			<td>{{ row['latitude'] }}</td>
+			<td>{{ row['longitude'] }}</td>
+			<td><a href="?action=update&cid={{ row['center_id'] }}" class="btn btn-success">Update</a></td>
+			<td><a href="?action=delete&cid={{ row['center_id'] }}" class="btn btn-info">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	
+
+{% include 'footer.html' %}

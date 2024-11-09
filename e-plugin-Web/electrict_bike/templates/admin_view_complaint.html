@@ -1,0 +1,37 @@
+{% include 'admin_header.html' %}
+
+<center>
+	<div class="allcontain">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<img src="/static/image/lo.jpg" alt="oldcar" >
+				<div class="carousel-caption">
+	
+	<table class="table" style="width: 500px;margin-left: 300px">
+		<h1 style="margin-left: 200px;">Complaints</h1>
+		<tr>
+			<th>Complaint</th>
+			<th>Date</th>
+			<th>Replay</th>
+		</tr>
+		{% for row in data['comp'] %}
+		<tr>
+			<td>{{ row['complaint'] }}</td>
+			<td>{{ row['date'] }}</td>
+			{%if row['reply']=='pending'%}
+			<td><a href="admin_send_reply?complaint_id={{ row['complaint_id'] }}" class="btn btn-info">Reply</a></td>
+			{%else%}
+			<td>{{ row['reply'] }}</td>
+			{%endif%}
+		</tr>
+		{% endfor %}	
+	</table>
+</center>
+</div>
+			</div>
+			
+		</div>
+		</div>
+</div>
+{% include 'footer.html' %}

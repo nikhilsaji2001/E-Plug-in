@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="E-Buddy"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Electric_bike"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".user_view_mechanic_details"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_view_bunk_details"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_compliant_bunk"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_view_service_center"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_pay_mechanic"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_request_mechanic"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".mechanic_registeration"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".User_send_request"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_update_vehicle"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_manage_vehicle"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user_registration"
+            android:exported="false" />
+        <activity
+            android:name=".user_pay_amount"
+            android:exported="false" />
+        <activity
+            android:name=".user_manage_profile"
+            android:exported="false" />
+        <activity
+            android:name=".user_view_oredereditem"
+            android:exported="false" />
+        <activity
+            android:name=".user_view_mechanic"
+            android:exported="false" />
+        <activity
+            android:name=".user_view_product"
+            android:exported="false" />
+        <activity
+            android:name=".user_view_bunk"
+            android:exported="false" />
+        <activity
+            android:name=".user_rate_bunk"
+            android:exported="false" />
+        <activity
+            android:name=".user_order_product"
+            android:exported="false" />
+        <activity
+            android:name=".user_pay_recharge_amount"
+            android:exported="false" />
+        <activity
+            android:name=".user_rate_sparepart"
+            android:exported="false" />
+        <activity
+            android:name=".user_view_spareparts"
+            android:exported="false" />
+        <activity
+            android:name=".user_rate_mechanic"
+            android:exported="false" />
+        <activity
+            android:name=".user_send_complaint"
+            android:exported="false" />
+        <activity
+            android:name=".user_view_mechanic_request"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".user_view_recharge_request"
+            android:exported="false" />
+        <activity
+            android:name=".user_home"
+            android:exported="false" />
+        <activity
+            android:name=".mechanic_view_payment"
+            android:exported="false" />
+        <activity
+            android:name=".mechanic_upload_servicecharge"
+            android:exported="false" />
+        <activity
+            android:name=".mechanic_view_customer"
+            android:exported="false" />
+        <activity
+            android:name=".mechanic_view_request"
+            android:exported="false" />
+        <activity
+            android:name=".mechanic_manage_profile"
+            android:exported="false" />
+        <activity
+            android:name=".mechanic_send_complaint"
+            android:exported="false" />
+        <activity
+            android:name=".mechanic_home"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".ipsettings"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <service android:name=".LocationService" />
+    </application>
+
+</manifest>

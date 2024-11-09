@@ -1,0 +1,124 @@
+{% include 'admin_header.html' %}
+
+<center>
+	<div class="allcontain">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<img src="/static/image/lo.jpg" alt="oldcar" >
+				<div class="carousel-caption">
+				
+	<!-- {% if data['mech'] %}
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+        <script type="text/javascript">
+            // window.onload = function () {
+            function myFunction() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(9.9763482, 76.286272),
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var infoWindow = new google.maps.InfoWindow();
+                var latlngbounds = new google.maps.LatLngBounds();
+                var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+                google.maps.event.addListener(map, 'click', function (e) {
+                    alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+                    document.getElementById('slati').value = e.latLng.lat();
+                    document.getElementById('elongi').value = e.latLng.lng();
+
+
+                });
+            }
+        </script>
+
+
+<center>
+	<form method="post" style="margin-top: -15em!important">
+	<h2 style="color: #fff;margin-top: -5em" >MECHANIC UPDATES</h2><br>
+	
+	<table style="width: 1000px;margin-top: -100px;color: black;" >
+			<tr>
+				<td>
+					
+			
+	<table class="table" style="width: 500px">
+			<tr>
+			<td style="color: white">FirstName</td>
+			<td><input type="text" name="firstname" value="{{data['mech'][0]['firstname']}}" required></td>
+		</tr>
+		<tr>
+			<td style="color: white">LastName</td>
+			<td><input type="text" name="lastname" value="{{data['mech'][0]['lastname']}}" required></td>
+		</tr>
+		<tr>
+			<td style="color: white">Place</td>
+			<td><input type="text" name="place" value="{{data['mech'][0]['place']}}"  required></td>	
+		</tr>
+		<tr>
+			<td style="color: white">Phone</td>
+			<td><input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" title="Phone number with 6-9 and remaing 9 digit with 0-9" value="{{data['mech'][0]['phone']}}" required></td>	
+		</tr>
+		<tr>
+			<td style="color: white">Email</td>
+			<td><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Enter Valid Email" name="email" value="{{data['mech'][0]['email']}}" required></td>	
+		</tr>
+
+		<tr>
+			<td style="color: white">Latitude</td>
+			<td><input type="text" name="latitude" id="slati"></td>	
+			<td><a onclick="myFunction();" value="{{data['mech'][0]['latitude']}}" class="btn btn-success" required>View Map</a></td>
+		</tr>
+		<tr>
+			<td style="color: white">Longitude</td>
+			<td><input type="text" name="longitude" id="elongi" value="{{data['mech'][0]['longitude']}}" required></td>	
+		</tr>
+		
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="submit" value="Update" class="btn btn-primary"></td>
+		</tr>
+		
+		</table>
+		</td>
+		<td>
+			<div id="dvMap" style="width: 600px; height: 400px"></div>
+		</td>
+			</tr>
+		</table>
+	</form>
+	{% endif %} -->
+
+	<table class="table" style="width: 500px;margin-left: 100px;padding-top: 100PX;">
+					<h1 style=" ">MECHANIC</h1>
+
+		<tr>
+			<th>FirstName</th>
+			<th>Lastname</th>
+			<th>Place</th>
+			<th>Phone Number</th>
+			<th>Email</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+		</tr>
+		{% for row in data['mechanic'] %}
+		<tr>
+			<td>{{ row['firstname'] }}</td>
+			<td>{{ row['lastname'] }}</td>
+			<td>{{ row['place'] }}</td>
+			<td>{{ row['phone'] }}</td>
+			<td>{{ row['email'] }}</td>
+			<td>{{ row['latitude'] }}</td>
+			<td>{{ row['longitude'] }}</td>
+			<td><a href="?action=reject&mid={{ row['mechanic_id'] }}" class="btn btn-success">Reject</a></td>
+			<td><a href="?action=accept&mid={{ row['mechanic_id'] }}" class="btn btn-info">Accept</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+			</div>
+			
+		</div>
+		</div>
+</div>
+{% include 'footer.html' %}

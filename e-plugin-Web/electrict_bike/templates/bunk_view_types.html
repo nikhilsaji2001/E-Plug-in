@@ -1,0 +1,30 @@
+{% include 'bunk_header.html' %}
+<center>
+	<div class="allcontain">
+	<div id="carousel-up" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<img src="/static/image/lo.jpg" alt="oldcar" >
+				<div class="carousel-caption">
+					<h1 style="margin-left: 200px;">Types</h1>
+	<table class="table" style="width: 500px;margin-left: 200px">
+		<tr>
+			<th>Type Name</th>
+			<th>Voltage</th>
+			<th>Add As MyService </th>
+		</tr>
+		{% for row in data['type'] %}
+		<tr>
+			<td>{{ row['type_name'] }}</td>
+			<td>{{ row['voltage'] }}</td>
+			<td><a href="bunk_add_as_service?type_id={{row['type_id']}}" class="btn btn-info">Add</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+			</div>
+		</div>
+		</div>
+</div>
+{% include 'footer.html' %}
